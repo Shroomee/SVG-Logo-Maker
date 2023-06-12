@@ -1,7 +1,6 @@
 // require npms
 const fs = require('fs');
 const inquirer = require('inquirer');
-const svg = require('./lib/shapes');
 //deconstructing objects
 const {Circle, Square, Triangle} = require('./lib/shapes');
 
@@ -57,7 +56,7 @@ inquirer.prompt(questions)
         var newShape = new Triangle(answers.text, answers.textColor, answers.shapeColor);
     }
     //write new object to file
-    fs.writeFile('logo.svg', svg, (err) => {
+    fs.writeFile('logo.svg', newShape, (err) => {
         if (err) throw err;
         console.log('file saved');
     }
